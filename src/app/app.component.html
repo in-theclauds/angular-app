@@ -13,6 +13,9 @@
       </li>
       </ul>
 
-      <h3 *ngIf="animals.length > 3"> Look at all those chickens! </h3>
+      <h3 *ngIf="animals.length > 10; else notDur"> Look at all those chickens! </h3>
 
-      <h3 *ngElse="animals.length < 9"></h3>
+<!-- use the “else” statement, to control the render flow inside a component’s template: -->
+      <ng-template #notDur>
+        Friend, we need more animals. 
+      </ng-template>
